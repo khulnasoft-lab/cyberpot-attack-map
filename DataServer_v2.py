@@ -14,7 +14,7 @@ es = Elasticsearch('http://elasticsearch:9200')
 redis_ip = 'map_redis'
 redis_instance = None
 redis_channel = 'attack-map-production'
-version = 'Data Server 2.2.2'
+version = 'Data Server 2.2.6'
 local_tz = get_localzone()
 output_text = os.getenv("CYBERPOT_ATTACKMAP_TEXT")
 
@@ -69,9 +69,9 @@ def get_honeypot_stats(timedelta):
                         "type.keyword": [
                             "Adbhoney", "Beelzebub", "Ciscoasa", "CitrixHoneypot", "ConPot",
                             "Cowrie", "Ddospot", "Dicompot", "Dionaea", "ElasticPot", 
-                            "Endlessh", "Galah", "Glutton", "Hellpot", "Heralding", 
-                            "Honeytrap", "Honeypots", "Log4pot", "Ipphoney", "Mailoney", 
-                            "Medpot", "Redishoneypot", "Sentrypeer", "Tanner", "Wordpot"
+                            "Endlessh", "Galah", "Glutton", "Go-pot", "H0neytr4p", "Hellpot", "Heralding", 
+                            "Honeyaml", "Honeytrap", "Honeypots", "Log4pot", "Ipphoney", "Mailoney", 
+                            "Medpot", "Miniprint", "Redishoneypot", "Sentrypeer", "Tanner", "Wordpot"
                         ]
                     }
                 },
@@ -119,9 +119,9 @@ def update_honeypot_data():
                         "query_string": {
                             "query": (
                                 "type:(Adbhoney OR Beelzebub OR Ciscoasa OR CitrixHoneypot OR ConPot OR Cowrie "
-                                "OR Ddospot OR Dicompot OR Dionaea OR ElasticPot OR Endlessh OR Galah OR Glutton "
-                                "OR Hellpot OR Heralding OR Honeypots OR Honeytrap OR Ipphoney OR Log4pot OR Mailoney "
-                                "OR Medpot OR Redishoneypot OR Sentrypeer OR Tanner OR Wordpot)"
+                                "OR Ddospot OR Dicompot OR Dionaea OR ElasticPot OR Endlessh OR Galah OR Glutton OR Go-pot OR H0neytr4p "
+                                "OR Hellpot OR Heralding OR Honeyaml OR Honeypots OR Honeytrap OR Ipphoney OR Log4pot OR Mailoney "
+                                "OR Medpot OR Miniprint OR Redishoneypot OR Sentrypeer OR Tanner OR Wordpot)"
                             )
                         }
                     }
